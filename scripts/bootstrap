@@ -154,14 +154,8 @@ apt-get update -q \
   && make -j4 cairo=no install \
   && cd ..
 
-[[ "$(install_bin 'igvtools')" == 0 ]] \
-  && wget \
-  http://www.broadinstitute.org/igv/projects/downloads/igvtools_${IGVTOOLS_VER}.zip \
-  && unzip igvtools_${IGVTOOLS_VER}.zip \
-  && mv ./IGVTools/igvtools ./IGVTools/igvtools.jar ${INSTALL_DIR}/
 
-
-#samtool, STAR, tophat, ribodiff waived
+#samtool, STAR, tophat, ribodiff, igvtools waived
 
 # Cleanup work directory
 for dir in ${WORK_DIR}/*; do
