@@ -160,15 +160,8 @@ apt-get update -q \
   && unzip igvtools_${IGVTOOLS_VER}.zip \
   && mv ./IGVTools/igvtools ./IGVTools/igvtools.jar ${INSTALL_DIR}/
 
-[[ "$(install_bin 'ribodiff')" == 0 ]] \
-  && git clone --depth 1 -b ${RIBODIFF_VER} \
-  https://github.com/ratschlab/RiboDiff.git ribodiff \
-  && cd ribodiff \
-  && python setup.py build \
-  && python setup.py install \
-  && cd ..
 
-#samtool, STAR, tophat waived
+#samtool, STAR, tophat, ribodiff waived
 
 # Cleanup work directory
 for dir in ${WORK_DIR}/*; do
