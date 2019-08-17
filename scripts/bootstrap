@@ -21,9 +21,9 @@ function install_bin {
 }
 
 # SETTINGS #####################################################################
-INSTALL_DIR=/usr/local/bin              # installation directory
-WORK_DIR=${HOME}/ribopip_software/      # work directory
-SCRIPT_DIR=$(dirname ${BASH_SOURCE[0]}) # script directory
+INSTALL_DIR=/scratch/midway2/fengxinran/scratch-midway/RiboPip_LBX              # installation directory
+WORK_DIR=/scratch/midway2/fengxinran/scratch-midway/RiboPip_LBX      # work directory
+SCRIPT_DIR=/scratch/midway2/fengxinran/scratch-midway/RiboPip_LBX # script directory
 CLEANUP=true                            # remove downloads after installation
 
 # Versions
