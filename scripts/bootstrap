@@ -118,13 +118,7 @@ apt-get update -q \
   && python setup.py build_ext -i \
   && cd ..
 
-# Install DESeq1 & DESeq2
-Rscript -e \
-  'install.packages("XML", dependencies=TRUE, repos="http://cran.rstudio.com/")'
-Rscript -e \
-  'source("http://bioconductor.org/biocLite.R");biocLite();biocLite("DESeq")'
-Rscript -e \
-  'source("http://bioconductor.org/biocLite.R");biocLite();biocLite("DESeq2")'
+# Install DESeq1 & DESeq2 (Waived)
 
 [[ "$(install_bin 'fastq_illumina_filter')" == 0 ]] \
   && wget \
