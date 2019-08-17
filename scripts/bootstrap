@@ -23,7 +23,7 @@ function install_bin {
 # SETTINGS #####################################################################
 INSTALL_DIR=/scratch/midway2/fengxinran/scratch-midway/RiboPip_LBX/             # installation directory
 WORK_DIR=/scratch/midway2/fengxinran/scratch-midway/RiboPip_LBX/      # work directory
-SCRIPT_DIR=/scratch/midway2/fengxinran/scratch-midway/RiboPip_LBX/ # script directory
+SCRIPT_DIR=/scratch/midway2/fengxinran/scratch-midway/Ribopip # script directory
 CLEANUP=true                            # remove downloads after installation
 
 # Versions
@@ -168,27 +168,7 @@ apt-get update -q \
   && python setup.py install \
   && cd ..
 
-[[ "$(install_bin 'samtools')" == 0 ]] \
-  && wget -qO- \
-  http://sourceforge.net/projects/samtools/files/samtools/$SAMTOOLS_VER/samtools-${SAMTOOLS_VER}.tar.bz2/download \
-  | tar -xj \
-  && cd ./samtools-${SAMTOOLS_VER} \
-  && make install \
-  && cd ..
-
-[[ "$(install_bin 'STAR')" == 0 ]] \
-  && git clone --depth 1 -b ${STAR_VER} https://github.com/alexdobin/STAR.git star \
-  && cd ./star \
-  && make STAR \
-  && cp bin/Linux_x86_64/STAR ${INSTALL_DIR}/ \
-  && cd ..
-
-[[ "$(install_bin 'tophat')" == 0 ]] \
-  && wget -qO- \
-  https://ccb.jhu.edu/software/tophat/downloads/tophat-${TOPHAT_VER}.Linux_x86_64.tar.gz \
-  | tar xz \
-  && ln -s "${WORK_DIR}/tophat-${TOPHAT_VER}.Linux_x86_64/tophat" "${INSTALL_DIR}/tophat" \
-  && ln -s "${WORK_DIR}/tophat-${TOPHAT_VER}.Linux_x86_64/tophat2" "${INSTALL_DIR}/tophat2"
+#samtool, STAR, tophat waived
 
 # Cleanup work directory
 for dir in ${WORK_DIR}/*; do
